@@ -1,0 +1,11 @@
+<div class="NavBarDiv">
+  <nav class="NavBar">
+    <ul>
+      <li><button class="newChatButton" (click)="newChatButtonHandler()"> <b>+</b> New Chat</button></li>
+      <li *ngFor="let category of categories" (click)="navigateToCategory(category.name)" style="color: azure;">
+        {{ category.name }}
+        
+      </li>
+    </ul>
+  </nav>
+</div>
