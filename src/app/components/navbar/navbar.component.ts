@@ -30,7 +30,10 @@ export class NavbarComponent implements OnInit {
     const body = { username: 'manohar' }; // Create the request body
 
     this.http
-      .post<Category[]>('http://127.0.0.1:5000/getNavBarData', body)
+      .post<Category[]>(
+        'http://manoharvellala.pythonanywhere.com/getNavBarData',
+        body
+      )
       .subscribe(
         (response) => {
           this.categories = response;

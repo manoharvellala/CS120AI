@@ -38,7 +38,7 @@ export class LayoutComponent {
   }
   // function to get title for the question and answer for the first time
   generateTitle(message: any): Promise<any> {
-    const apiUrl = 'http://127.0.0.1:5000/generateTitle';
+    const apiUrl = 'http://manoharvellala.pythonanywhere.com/generateTitle';
     const requestBody = {
       question: message,
     };
@@ -137,17 +137,20 @@ export class LayoutComponent {
 
     // fetch the data from serve
 
-    const response = await fetch('http://127.0.0.1:5000/chat', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        question: data.get('prompt'),
-        username: 'manohar',
-        title: `${this.navBarTitle}`,
-      }),
-    });
+    const response = await fetch(
+      'http://manoharvellala.pythonanywhere.com/chat',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          question: data.get('prompt'),
+          username: 'manohar',
+          title: `${this.navBarTitle}`,
+        }),
+      }
+    );
 
     this.reloadNavbar = false;
     this.cdr.detectChanges();

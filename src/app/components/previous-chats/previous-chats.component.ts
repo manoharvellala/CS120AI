@@ -37,7 +37,8 @@ export class PreviousChatsComponent {
   // Load the previous chat associated with the username and his title
   loadPreviousChats(categoryName: any) {
     this.container.innerHTML = '';
-    const apiUrl = 'http://127.0.0.1:5000/getQuestionAndAnswer';
+    const apiUrl =
+      'http://manoharvellala.pythonanywhere.com/getQuestionAndAnswer';
     const requestBody = {
       username: 'manohar',
       title: categoryName,
@@ -177,17 +178,20 @@ export class PreviousChatsComponent {
     const categoryName = this.route.snapshot.queryParams['categoryName'];
     // fetch the data from serve
 
-    const response = await fetch('http://127.0.0.1:5000/chat', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        question: data.get('prompt'),
-        username: 'manohar',
-        title: categoryName,
-      }),
-    });
+    const response = await fetch(
+      'http://manoharvellala.pythonanywhere.com/chat',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          question: data.get('prompt'),
+          username: 'manohar',
+          title: categoryName,
+        }),
+      }
+    );
 
     clearInterval(this.loadinterval);
     if (messageDiv != null) {
