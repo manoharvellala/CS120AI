@@ -38,7 +38,7 @@ export class PreviousChatsComponent {
   loadPreviousChats(categoryName: any) {
     this.container.innerHTML = '';
     const apiUrl =
-      'http://manoharvellala.pythonanywhere.com/getQuestionAndAnswer';
+      'https://manoharvellala.pythonanywhere.com/getQuestionAndAnswer';
     const requestBody = {
       username: 'manohar',
       title: categoryName,
@@ -179,7 +179,7 @@ export class PreviousChatsComponent {
     // fetch the data from serve
 
     const response = await fetch(
-      'http://manoharvellala.pythonanywhere.com/chat',
+      'https://manoharvellala.pythonanywhere.com/chat',
       {
         method: 'POST',
         headers: {

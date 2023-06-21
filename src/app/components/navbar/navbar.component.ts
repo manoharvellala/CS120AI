@@ -31,7 +31,7 @@ export class NavbarComponent implements OnInit {
 
     this.http
       .post<Category[]>(
-        'http://manoharvellala.pythonanywhere.com/getNavBarData',
+        'https://manoharvellala.pythonanywhere.com/getNavBarData',
         body
       )
       .subscribe(

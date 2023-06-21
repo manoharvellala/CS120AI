@@ -38,7 +38,7 @@ export class LayoutComponent {
   }
   // function to get title for the question and answer for the first time
   generateTitle(message: any): Promise<any> {
-    const apiUrl = 'http://manoharvellala.pythonanywhere.com/generateTitle';
+    const apiUrl = 'https://manoharvellala.pythonanywhere.com/generateTitle';
     const requestBody = {
       question: message,
     };
@@ -138,7 +138,7 @@ export class LayoutComponent {
     // fetch the data from serve
 
     const response = await fetch(
-      'http://manoharvellala.pythonanywhere.com/chat',
+      'https://manoharvellala.pythonanywhere.com/chat',
       {
         method: 'POST',
         headers: {
