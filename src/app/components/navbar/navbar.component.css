@@ -1,12 +1,14 @@
 .NavBar {
   position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   overflow-y: auto;
-  max-height: 100vh;
   background-color: rgb(32, 33, 35);
 }
 
