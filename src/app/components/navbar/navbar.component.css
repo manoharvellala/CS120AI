@@ -12,6 +12,20 @@
   background-color: rgb(32, 33, 35);
 }
 
+@media (max-width: 768px) {
+  .NavBar {
+    padding: 5px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .NavBar {
+    padding: 3px;
+    font-size: 12px;
+  }
+}
+
 .NavBar ul {
   list-style-type: none;
   padding: 0;
@@ -28,7 +42,6 @@
 .NavBar li:hover {
   background-color: rgb(86, 88, 93);
 }
-
 .newChatButton {
   color: white;
   border: 1px solid white;
@@ -36,7 +49,6 @@
   height: 50px;
   padding: 1rem;
 }
-
 .mailbox-symbol {
   content: "\2709";
   font-size: 1.5em;

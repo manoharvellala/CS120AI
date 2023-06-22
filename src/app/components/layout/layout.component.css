@@ -5,11 +5,13 @@ h1 {
   font-weight: 600;
   font-size: 40px;
 }
+
 h2 {
   color: white;
   font-weight: normal;
   margin-left: 10%;
 }
+
 section {
   display: flex;
   flex-direction: row;
@@ -19,6 +21,7 @@ section {
   margin-left: 13%;
   margin-top: 5%;
 }
+
 p {
   background: #40414f;
   border: 5px;
@@ -32,13 +35,60 @@ p {
   font-size: 2.5em;
   margin-left: 25%;
 }
+
 .lightning-icon {
   margin-left: 25%;
   font-size: 2.2em;
   color: white;
 }
+
 .warning-icon {
   color: white;
   font-size: 2em;
   margin-left: 25%;
+}
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 30px;
+    margin-left: 5%;
+  }
+
+  h2,
+  p {
+    margin-left: 5%;
+  }
+
+  section {
+    flex-direction: column;
+    margin-left: 5%;
+  }
+
+  .sun-icon,
+  .lightning-icon,
+  .warning-icon {
+    margin-left: 10%;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 24px;
+    margin-left: 2%;
+  }
+
+  h2,
+  p {
+    margin-left: 2%;
+  }
+
+  section {
+    margin-left: 2%;
+  }
+
+  .sun-icon,
+  .lightning-icon,
+  .warning-icon {
+    margin-left: 5%;
+  }
 }
