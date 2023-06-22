@@ -1,12 +1,48 @@
-<app-navbar *ngIf="reloadNavbar" ></app-navbar>
+<app-navbar *ngIf="reloadNavbar"></app-navbar>
 
 <div id="app">
-  
+  <h1 *ngIf="loadSection">ChatGPT</h1>
+  <section *ngIf="loadSection">
+    <div class="examples">
+      <span class="sun-icon">&#9788;</span>
+      <h2>Examples</h2>
+      <p>Explain quantum computing <br />in simple terms</p>
+      <p>Got any creative ideas for a <br />10 year old’s birthday?</p>
+      <p>How do I make an HTTP request <br />in Javascript?</p>
+    </div>
+
+    <div class="capabilities">
+      <span class="lightning-icon">&#9889;</span>
+      <h2>Capabilities</h2>
+      <p>Remembers what user said earlier <br />in the conversation</p>
+      <p>Allows user to provide follow-up <br />corrections</p>
+      <p>Trained to decline inappropriate <br />requests</p>
+    </div>
+
+    <div class="limitations">
+      <span class="warning-icon">&#9888;</span>
+      <h2>Limitations</h2>
+      <p>
+        May occasionally generate<br />
+        incorrect information
+      </p>
+      <p>
+        May occasionally produce <br />harmful instructions or biased content
+      </p>
+      <p>Limited knowledge of world and <br />events after 2021</p>
+    </div>
+  </section>
 
   <div id="container" #container></div>
-  
-  <form #form>
-    <textarea name="prompt" rows="1" cols="1" placeholder="Ask GPT chat..."></textarea>
+
+  <form #form (keydown.enter)="handlesubmit($event)">
+    <textarea
+      id="textArea"
+      name="prompt"
+      rows="1"
+      cols="1"
+      placeholder="Ask GPT chat..."
+    ></textarea>
     <button type="submit"><img src="../assets/send.svg" /></button>
   </form>
 </div>

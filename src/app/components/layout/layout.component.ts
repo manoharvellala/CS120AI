@@ -22,6 +22,7 @@ export class LayoutComponent {
   navBarTitle: any;
   titleExist: any = false;
   reloadNavbar: boolean = true;
+  loadSection: boolean = true;
 
   constructor(private elementref: ElementRef, private cdr: ChangeDetectorRef) {}
 
@@ -109,7 +110,7 @@ export class LayoutComponent {
 
   handlesubmit = async (e: any) => {
     e.preventDefault();
-
+    this.loadSection = false;
     if (this.titleExist === false) {
       const data = new FormData(this.form ?? undefined);
 
