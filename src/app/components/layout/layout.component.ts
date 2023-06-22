@@ -174,5 +174,6 @@ export class LayoutComponent {
         alert(err);
       }
     }
+    this.form.reset();
   };
 }
