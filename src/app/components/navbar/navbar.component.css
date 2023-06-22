@@ -1,16 +1,13 @@
-.NavBarDiv {
-  background-color: rgb(32, 33, 35);
-  position: fixed;
-  height: 100%;
-}
-
 .NavBar {
+  position: fixed;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   overflow-y: auto;
+  max-height: 100vh;
+  background-color: rgb(32, 33, 35);
 }
 
 .NavBar ul {
