@@ -17,7 +17,6 @@ export class LayoutComponent {
   bot = './assets/bot.svg';
   user = './assets/user.svg';
   loggedInUser: any;
-  formDisplay: boolean = false;
 
   form: any;
   container: any;
@@ -116,7 +115,6 @@ export class LayoutComponent {
   getUserInfo() {
     this.auth.user$.subscribe((user) => {
       this.loggedInUser = user;
-      this.formDisplay = true;
     });
   }
 
@@ -124,6 +122,7 @@ export class LayoutComponent {
     e.preventDefault();
     this.loadSection = false;
     this.getUserInfo();
+
     if (this.titleExist === false) {
       const data = new FormData(this.form ?? undefined);
 
