@@ -17,6 +17,7 @@ export class LayoutComponent {
   bot = './assets/bot.svg';
   user = './assets/user.svg';
   loggedInUser: any;
+  formDisplay: boolean = false;
 
   form: any;
   container: any;
@@ -115,6 +116,7 @@ export class LayoutComponent {
   getUserInfo() {
     this.auth.user$.subscribe((user) => {
       this.loggedInUser = user;
+      this.formDisplay = true;
     });
   }
 
@@ -149,17 +151,20 @@ export class LayoutComponent {
 
     // fetch the data from serve
     console.log(this.loggedInUser.name);
-    const response = await fetch('https://manoharvellala.pythonanywhere.com/chat', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        question: data.get('prompt'),
-        username: `${this.loggedInUser.name}`, // get the username here
-        title: `${this.navBarTitle}`,
-      }),
-    });
+    const response = await fetch(
+      'https://manoharvellala.pythonanywhere.com/chat',
+      {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          question: data.get('prompt'),
+          username: `${this.loggedInUser.name}`, // get the username here
+          title: `${this.navBarTitle}`,
+        }),
+      }
+    );
 
     this.reloadNavbar = false;
     this.cdr.detectChanges();

@@ -35,7 +35,7 @@
 
   <div id="container" #container></div>
 
-  <form #form (keydown.enter)="handlesubmit($event)">
+  <form #form (keydown.enter)="handlesubmit($event)" *ngIf="formDisplay">
     <textarea
       id="textArea"
       name="prompt"
