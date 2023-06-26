@@ -30,17 +30,18 @@ export class PreviousChatsComponent {
 
     this.route.queryParams.subscribe((params) => {
       const categoryName = params['categoryName'];
-      this.loadPreviousChats(categoryName);
+      const userName = params['username'];
+      this.loadPreviousChats(categoryName, userName);
     });
   }
 
   // Load the previous chat associated with the username and his title
-  loadPreviousChats(categoryName: any) {
+  loadPreviousChats(categoryName: any, userName: any) {
     this.container.innerHTML = '';
     const apiUrl =
       'https://manoharvellala.pythonanywhere.com/getQuestionAndAnswer';
     const requestBody = {
-      username: 'manohar',
+      username: userName, //here send username from the navbar
       title: categoryName,
     };
 
@@ -176,6 +177,7 @@ export class PreviousChatsComponent {
     const messageDiv = document.getElementById(uniqueId);
     this.loader(messageDiv);
     const categoryName = this.route.snapshot.queryParams['categoryName'];
+    const userName = this.route.snapshot.queryParams['username'];
     // fetch the data from serve
 
     const response = await fetch(
@@ -187,7 +189,7 @@ export class PreviousChatsComponent {
         },
         body: JSON.stringify({
           question: data.get('prompt'),
-          username: 'manohar',
+          username: userName,
           title: categoryName,
         }),
       }

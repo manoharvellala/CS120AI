@@ -1,4 +1,4 @@
-import { NONE_TYPE } from '@angular/compiler';
+import { AuthService } from '@auth0/auth0-angular';
 import {
   ChangeDetectorRef,
   Component,
@@ -16,6 +16,7 @@ export class LayoutComponent {
   loadinterval: any;
   bot = './assets/bot.svg';
   user = './assets/user.svg';
+  loggedInUser: any;
 
   form: any;
   container: any;
@@ -24,7 +25,11 @@ export class LayoutComponent {
   reloadNavbar: boolean = true;
   loadSection: boolean = true;
 
-  constructor(private elementref: ElementRef, private cdr: ChangeDetectorRef) {}
+  constructor(
+    private elementref: ElementRef,
+    private cdr: ChangeDetectorRef,
+    public auth: AuthService
+  ) {}
 
   ngAfterViewInit() {
     this.form = this.elementref.nativeElement.querySelector('form');
@@ -107,10 +112,16 @@ export class LayoutComponent {
       </div>
       `;
   }
+  getUserInfo() {
+    this.auth.user$.subscribe((user) => {
+      this.loggedInUser = user;
+    });
+  }
 
   handlesubmit = async (e: any) => {
     e.preventDefault();
     this.loadSection = false;
+    this.getUserInfo();
     if (this.titleExist === false) {
       const data = new FormData(this.form ?? undefined);
 
@@ -137,21 +148,18 @@ export class LayoutComponent {
     this.loader(messageDiv);
 
     // fetch the data from serve
-
-    const response = await fetch(
-      'https://manoharvellala.pythonanywhere.com/chat',
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          question: data.get('prompt'),
-          username: 'manohar',
-          title: `${this.navBarTitle}`,
-        }),
-      }
-    );
+    console.log(this.loggedInUser.name);
+    const response = await fetch('https://manoharvellala.pythonanywhere.com/chat', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        question: data.get('prompt'),
+        username: `${this.loggedInUser.name}`, // get the username here
+        title: `${this.navBarTitle}`,
+      }),
+    });
 
     this.reloadNavbar = false;
     this.cdr.detectChanges();

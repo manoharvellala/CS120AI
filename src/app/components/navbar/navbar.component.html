@@ -1,6 +1,10 @@
 <div class="NavBarDiv">
   <nav class="NavBar">
-    <ul>
+    <ul class="loginButton" *ngIf="loginButtonDisplay">
+      <button class="loginAuth" (click)="login()">Log in</button>
+    </ul>
+
+    <ul *ngIf="loggedInUser">
       <li>
         <button class="newChatButton" (click)="newChatButtonHandler()">
           <b>+</b> New Chat
@@ -14,6 +18,35 @@
         <span class="mailbox-symbol">&#9993;</span>
 
         {{ category.name }}
+      </li>
+    </ul>
+
+    <ul>
+      <span class="line" *ngIf="loggedInUser"></span>
+
+      <li *ngIf="loggedInUser">
+        <ul class="userDetails">
+          <img
+            class="profile-pic"
+            src="{{ loggedInUser.picture }}"
+            alt="Profile Picture"
+          />
+
+          <span class="username" style="color: white">{{
+            loggedInUser.name
+          }}</span>
+          <button
+            mat-icon-button
+            [matMenuTriggerFor]="menu"
+            aria-label="User Menu"
+            class="dots"
+          >
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item (click)="logout()">Logout</button>
+          </mat-menu>
+        </ul>
       </li>
     </ul>
   </nav>

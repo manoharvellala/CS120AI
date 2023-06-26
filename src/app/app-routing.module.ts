@@ -4,17 +4,13 @@ import { PreviousChatsComponent } from './components/previous-chats/previous-cha
 import { AppComponent } from './app.component';
 import { LayoutComponent } from './components/layout/layout.component';
 
-
 const routes: Routes = [
-  
-    {path: '',component: LayoutComponent},
-    {path: 'previous-chats/:category.name', component: PreviousChatsComponent }
-    
-  
+  { path: '', component: LayoutComponent },
+
+  { path: 'previous-chats/:category.name', component: PreviousChatsComponent },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
-
+export class AppRoutingModule {}

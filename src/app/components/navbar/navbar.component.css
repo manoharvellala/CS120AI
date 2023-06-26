@@ -6,7 +6,7 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: flex-start;
   overflow-y: auto;
   background-color: rgb(32, 33, 35);
@@ -53,4 +53,34 @@
   content: "\2709";
   font-size: 1.5em;
   margin-right: 4px;
+}
+.loginButton {
+  padding: 10px;
+}
+.profile-pic {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+.line {
+  display: block;
+  width: 200px;
+  height: 1px;
+  background-color: white;
+}
+.userDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.dots {
+  color: white;
+}
+.loginAuth {
+  margin: auto;
+  color: white;
+  background-color: green;
+  border-radius: 10%;
+  font-size: 40px;
+  font-weight: bold;
 }
