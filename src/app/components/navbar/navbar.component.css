@@ -8,7 +8,7 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  overflow-y: auto;
+
   background-color: rgb(32, 33, 35);
 }
 
@@ -44,10 +44,17 @@
 }
 .newChatButton {
   color: white;
-  border: 1px solid white;
-  width: 150px;
-  height: 50px;
-  padding: 1rem;
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
+
+  width: 175px;
+  height: 40px;
+  text-align: left;
+  border-radius: 5px;
+  padding-left: 10px;
+  align-items: center;
+  font-size: 14px;
+  display: flex;
+  gap: 10px;
 }
 .mailbox-symbol {
   content: "\2709";
@@ -66,7 +73,7 @@
   display: block;
   width: 200px;
   height: 1px;
-  background-color: white;
+  background-color: hsla(0, 0%, 100%, 0.2);
 }
 .userDetails {
   display: flex;
@@ -74,7 +81,7 @@
   justify-content: space-between;
 }
 .dots {
-  color: white;
+  color: hsla(0, 0%, 100%, 0.2);
 }
 .loginAuth {
   margin: auto;
@@ -83,4 +90,19 @@
   border-radius: 10%;
   font-size: 40px;
   font-weight: bold;
+}
+.navBarBody {
+  overflow-y: scroll;
+  max-height: 600px;
+  scrollbar-color: rgb(32, 33, 35) white;
+}
+
+.message-symbol {
+  width: 18px;
+  height: 18px;
+}
+.list-items {
+  display: flex;
+  gap: 10px;
+  align-items: center;
 }

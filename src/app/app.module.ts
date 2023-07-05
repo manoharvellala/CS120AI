@@ -12,6 +12,7 @@ import { AuthModule } from '@auth0/auth0-angular';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
+import { AuthenticationComponent } from './components/authentication/authentication.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { MatIconModule } from '@angular/material/icon';
     NavbarComponent,
     PreviousChatsComponent,
     LayoutComponent,
+    AuthenticationComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,7 @@ import { MatIconModule } from '@angular/material/icon';
       domain: 'dev-qik1l2ef.us.auth0.com',
       clientId: 'oUrswndoUdvwXcN95NeS8wx9c19GAZm9',
       authorizationParams: {
-        redirect_uri: window.location.origin,
+        redirect_uri: `http://localhost:4200/layout`,
       },
     }),
     BrowserAnimationsModule,

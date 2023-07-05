@@ -1,0 +1,16 @@
+form {
+  width: 55%;
+
+  bottom: 0%;
+  margin-left: 20%;
+  margin-bottom: 20px;
+  padding-left: 0px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-right: 2px;
+  background: #40414f;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

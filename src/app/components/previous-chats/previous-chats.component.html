@@ -1,11 +1,14 @@
 <app-navbar></app-navbar>
 <div id="app">
-  
+  <div id="container" #container></div>
 
-    <div id="container" #container></div>
-    
-    <form #form>
-      <textarea name="prompt" rows="1" cols="1" placeholder="Ask GPT chat..."></textarea>
-      <button type="submit"><img src="../assets/send.svg" /></button>
-    </form>
-  </div>
+  <form #form (keydown.enter)="handlesubmit($event)">
+    <textarea
+      name="prompt"
+      rows="1"
+      cols="1"
+      placeholder="Ask GPT chat..."
+    ></textarea>
+    <button type="submit"><img src="../assets/send.svg" /></button>
+  </form>
+</div>

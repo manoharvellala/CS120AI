@@ -95,4 +95,8 @@ p {
 .footer {
   color: white;
   margin-left: 14%;
+  margin-top: 15px;
+  font-size: 12px;
+  margin-bottom: 5px;
+  font-weight: lighter;
 }

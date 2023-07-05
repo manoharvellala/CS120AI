@@ -17,7 +17,7 @@ interface Category {
 export class NavbarComponent implements OnInit {
   categories: Category[] = [];
   loggedInUser: any;
-  loginButtonDisplay: boolean = true;
+  loginButtonDisplay: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -61,31 +61,24 @@ export class NavbarComponent implements OnInit {
     });
   }
   newChatButtonHandler() {
-    this.location.replaceState('/');
-    location.reload(); // Refresh the page
-    const routePath = '/';
-    this.router.navigate([routePath]);
-    this.login();
+    this.auth.loginWithRedirect({
+      appState: { target: '/layout' },
+    });
   }
   getUserInfo() {
     this.auth.user$.subscribe((user) => {
       this.loggedInUser = user;
       console.log(this.loggedInUser);
       if (this.loggedInUser != null) {
-        this.loginButtonDisplay = false;
         this.fetchCategories(this.loggedInUser.name);
       }
     });
   }
-  login() {
-    // Add your login logic here
-    // For example, you can call auth.loginWithRedirect() to initiate the authentication process
-    this.auth.loginWithRedirect();
-  }
+
   logout() {
     // Add your logout logic here
     // Example: Call the logout method from AuthService if available
     this.auth.logout();
-    this.loginButtonDisplay = true;
+    this.loginButtonDisplay = false;
   }
 }
