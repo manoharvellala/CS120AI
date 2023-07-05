@@ -14,7 +14,9 @@ export class AuthenticationComponent {
     // Simulating authentication
     this.auth.loginWithRedirect({
       appState: {
-        target: 'https://main--stellar-melomakarona-c6a325.netlify.app/layout',
+        target: encodeURI(
+          'https://main--stellar-melomakarona-c6a325.netlify.app/layout'
+        ),
       },
     });
   }
