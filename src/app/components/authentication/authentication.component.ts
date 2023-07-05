@@ -19,5 +19,8 @@ export class AuthenticationComponent {
         ),
       },
     });
+    this.router.navigate([
+      'https://main--stellar-melomakarona-c6a325.netlify.app/layout',
+    ]);
   }
 }
