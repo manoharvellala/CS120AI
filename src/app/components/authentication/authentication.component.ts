@@ -15,6 +15,10 @@ export class AuthenticationComponent {
   ) {}
 
   login(): void {
-    this.router.navigate(['/layout']);
+    this.auth.loginWithRedirect({
+      appState: {
+        target: `${window.location.origin}/layout`,
+      },
+    });
   }
 }
