@@ -10,6 +10,10 @@ const routes: Routes = [
   { path: 'authentication', component: AuthenticationComponent },
   { path: 'layout', component: LayoutComponent },
   { path: 'previous-chats/:category.name', component: PreviousChatsComponent },
+  {
+    path: 'https://stellar-melomakarona-c6a325.netlify.app/layout',
+    component: LayoutComponent,
+  },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

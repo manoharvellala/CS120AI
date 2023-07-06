@@ -11,9 +11,10 @@ export class AuthenticationComponent {
   constructor(private router: Router, public auth: AuthService) {}
 
   login(): void {
-    // Simulating authentication
     this.auth.loginWithRedirect({
-      appState: { target: '/layout' },
+      appState: {
+        target: 'https://stellar-melomakarona-c6a325.netlify.app/layout',
+      },
     });
   }
 }
