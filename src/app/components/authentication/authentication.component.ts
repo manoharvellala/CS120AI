@@ -13,8 +13,9 @@ export class AuthenticationComponent {
   login(): void {
     this.auth.loginWithRedirect({
       appState: {
-        target: 'https://stellar-melomakarona-c6a325.netlify.app/layout',
+        target: window.location.origin + '/layout',
       },
     });
+    console.log('hello');
   }
 }

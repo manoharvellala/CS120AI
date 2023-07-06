@@ -32,7 +32,7 @@ import { AuthenticationComponent } from './components/authentication/authenticat
       domain: 'dev-qik1l2ef.us.auth0.com',
       clientId: 'oUrswndoUdvwXcN95NeS8wx9c19GAZm9',
       authorizationParams: {
-        redirect_uri: `https://stellar-melomakarona-c6a325.netlify.app/layout`,
+        redirect_uri: window.location.origin + '/layout',
       },
     }),
     BrowserAnimationsModule,
