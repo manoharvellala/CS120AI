@@ -61,7 +61,7 @@ export class NavbarComponent implements OnInit {
     });
   }
   newChatButtonHandler() {
-    this.auth.loginWithPopup().subscribe(() => {
+    this.auth.loginWithRedirect().subscribe(() => {
       this.router.navigate(['/layout']);
     });
   }
