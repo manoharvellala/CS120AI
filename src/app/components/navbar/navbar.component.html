@@ -9,20 +9,24 @@
         <div style="font-size: 20px">+</div>
         New Chat
       </button>
-    </div>
-    <div class="navBarBody">
-      <ul *ngIf="loggedInUser">
-        <li
-          class="list-items"
-          *ngFor="let category of categories"
-          (click)="navigateToCategory(category.name)"
-          style="color: azure"
-        >
-          <img class="message-symbol" src="../assets/conversation.png" alt="" />
+      <div class="navBarBody">
+        <ul *ngIf="loggedInUser">
+          <li
+            class="list-items"
+            *ngFor="let category of categories"
+            (click)="navigateToCategory(category.name)"
+            style="color: azure"
+          >
+            <img
+              class="message-symbol"
+              src="../assets/conversation.png"
+              alt=""
+            />
 
-          {{ category.name }}
-        </li>
-      </ul>
+            {{ category.name }}
+          </li>
+        </ul>
+      </div>
     </div>
 
     <ul>

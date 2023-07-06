@@ -12,6 +12,8 @@ export class AuthenticationComponent {
 
   login(): void {
     // Simulating authentication
-    this.auth.loginWithRedirect();
+    this.auth.loginWithRedirect({
+      appState: { target: '/layout' },
+    });
   }
 }
