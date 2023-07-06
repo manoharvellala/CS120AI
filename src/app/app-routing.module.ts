@@ -11,8 +11,12 @@ const routes: Routes = [
   { path: 'layout', component: LayoutComponent },
   { path: 'previous-chats/:category.name', component: PreviousChatsComponent },
   {
-    path: 'https://stellar-melomakarona-c6a325.netlify.app/layout',
+    path: 'layout',
     component: LayoutComponent,
+    pathMatch: 'prefix',
+    children: [
+      { path: '**', component: LayoutComponent }, // Match any URL after '/layout?code=...'
+    ],
   },
 ];
 @NgModule({
