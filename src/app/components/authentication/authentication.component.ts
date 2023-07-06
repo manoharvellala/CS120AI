@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, UrlSerializer } from '@angular/router';
 import { AuthService } from '@auth0/auth0-angular';
 
 @Component({
@@ -8,12 +8,19 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrls: ['./authentication.component.css'],
 })
 export class AuthenticationComponent {
-  constructor(private router: Router, public auth: AuthService) {}
+  constructor(
+    private router: Router,
+
+    public auth: AuthService
+  ) {}
 
   login(): void {
-    const redirectUri = `${window.location.origin}/layout`;
+    console.log(window.location.origin);
     this.auth.loginWithRedirect({
-      appState: { state: redirectUri },
+      appState: {
+        target: `${window.location.origin}` + '/layout',
+        state: '1234',
+      },
     });
   }
 }
