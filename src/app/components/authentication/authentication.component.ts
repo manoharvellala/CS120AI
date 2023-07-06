@@ -15,14 +15,9 @@ export class AuthenticationComponent {
   ) {}
 
   login(): void {
-    const targetUrl = this.urlSerializer.serialize(
-      this.router.createUrlTree(['/layout'])
-    );
-    const cleanedTargetUrl = targetUrl.split('?')[0]; // Remove query parameters
-
     this.auth.loginWithRedirect({
       appState: {
-        target: cleanedTargetUrl,
+        target: window.location.origin,
       },
     });
   }
