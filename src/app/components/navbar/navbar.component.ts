@@ -61,10 +61,8 @@ export class NavbarComponent implements OnInit {
     });
   }
   newChatButtonHandler() {
-    this.auth.loginWithRedirect({
-      appState: {
-        target: 'https://main--stellar-melomakarona-c6a325.netlify.app/layout',
-      },
+    this.auth.loginWithPopup().subscribe(() => {
+      this.router.navigate(['/layout']);
     });
   }
   getUserInfo() {
