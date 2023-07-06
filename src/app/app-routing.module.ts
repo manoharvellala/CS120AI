@@ -6,18 +6,11 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { AuthenticationComponent } from './components/authentication/authentication.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'authentication', pathMatch: 'full' }, // Redirect to '/authentication' as the default route
+  { path: '', redirectTo: 'authentication', pathMatch: 'full' },
   { path: 'authentication', component: AuthenticationComponent },
   { path: 'layout', component: LayoutComponent },
   { path: 'previous-chats/:category.name', component: PreviousChatsComponent },
-  {
-    path: 'layout',
-    component: LayoutComponent,
-    pathMatch: 'prefix',
-    children: [
-      { path: '**', component: LayoutComponent }, // Match any URL after '/layout?code=...'
-    ],
-  },
+  { path: '**', redirectTo: 'layout' },
 ];
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
