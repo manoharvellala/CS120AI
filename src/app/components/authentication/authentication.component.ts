@@ -15,12 +15,12 @@ export class AuthenticationComponent {
   ) {}
 
   login(): void {
-    console.log(window.location.origin);
     this.auth.loginWithRedirect({
       appState: {
         target: `${window.location.origin}` + '/layout',
         state: '1234',
       },
     });
+    console.log('hello');
   }
 }
