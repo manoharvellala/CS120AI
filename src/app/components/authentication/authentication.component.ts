@@ -11,11 +11,6 @@ export class AuthenticationComponent {
   constructor(private router: Router, public auth: AuthService) {}
 
   login(): void {
-    this.auth.loginWithRedirect({
-      appState: {
-        target: window.location.origin + '/layout',
-      },
-    });
-    console.log('hello');
+    this.auth.loginWithRedirect();
   }
 }
