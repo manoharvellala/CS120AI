@@ -62,7 +62,11 @@ export class NavbarComponent implements OnInit {
   }
   newChatButtonHandler() {
     this.getUserInfo;
-    this.router.navigate(['/layout']);
+    if (window.location.pathname == '/layout') {
+      window.location.reload();
+    } else {
+      this.router.navigate(['/layout']);
+    }
   }
   getUserInfo() {
     this.auth.user$.subscribe((user) => {
@@ -80,7 +84,21 @@ export class NavbarComponent implements OnInit {
     this.auth.logout();
   }
   clearConversation() {
-    console.log('hello');
+    fetch('https://manoharvellala.pythonanywhere.com/deleteConversation', {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        username: this.loggedInUser.name,
+      }),
+    })
+      .then((response) => {
+        this.newChatButtonHandler();
+      })
+      .catch((error) => {
+        console.error('Error:', error);
+      });
   }
   hideNavbarHandler() {
     this.hideNavbar = !this.hideNavbar;
