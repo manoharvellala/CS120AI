@@ -26,8 +26,8 @@ export class NavbarComponent implements OnInit {
     public auth: AuthService
   ) {}
 
-  ngOnInit() {
-    this.getUserInfo();
+  async ngOnInit() {
+    await this.getUserInfo();
   }
 
   fetchCategories(userName: any) {
