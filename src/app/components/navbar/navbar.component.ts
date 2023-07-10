@@ -63,7 +63,7 @@ export class NavbarComponent implements OnInit {
   async newChatButtonHandler() {
     if (await this.getUserInfo()) {
       if (window.location.pathname == '/layout') {
-        window.location.reload();
+        this.router.navigate(['/authenticate']);
       } else {
         this.router.navigate(['/layout']);
       }
