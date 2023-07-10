@@ -124,3 +124,14 @@
   height: 40px;
   border-radius: 5px;
 }
+.layouthideNavbar {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+}
+.sidebarBottom {
+  width: 35px;
+  height: 35px;
+  border-radius: 10px;
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
+}

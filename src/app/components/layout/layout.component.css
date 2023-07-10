@@ -48,50 +48,6 @@ p {
   margin-left: 25%;
 }
 
-@media (max-width: 768px) {
-  h1 {
-    font-size: 30px;
-    margin-left: 5%;
-  }
-
-  h2,
-  p {
-    margin-left: 5%;
-  }
-
-  section {
-    flex-direction: column;
-    margin-left: 5%;
-  }
-
-  .sun-icon,
-  .lightning-icon,
-  .warning-icon {
-    margin-left: 10%;
-  }
-}
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 24px;
-    margin-left: 2%;
-  }
-
-  h2,
-  p {
-    margin-left: 2%;
-  }
-
-  section {
-    margin-left: 2%;
-  }
-
-  .sun-icon,
-  .lightning-icon,
-  .warning-icon {
-    margin-left: 5%;
-  }
-}
 .footer {
   color: white;
   margin-left: 14%;
@@ -99,4 +55,8 @@ p {
   font-size: 12px;
   margin-bottom: 5px;
   font-weight: lighter;
+}
+#app {
+  background-color: #343541;
+  height: 100%;
 }
