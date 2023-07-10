@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -23,7 +23,8 @@ export class NavbarComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private location: Location,
-    public auth: AuthService
+    public auth: AuthService,
+    private cdr: ChangeDetectorRef
   ) {}
 
   ngOnInit() {
@@ -62,11 +63,7 @@ export class NavbarComponent implements OnInit {
   }
   newChatButtonHandler() {
     this.getUserInfo;
-    if (window.location.pathname == '/layout') {
-      this.ngOnInit();
-    } else {
-      this.router.navigate(['/layout']);
-    }
+    this.router.navigate(['/layout']);
   }
   getUserInfo() {
     this.auth.user$.subscribe((user) => {
