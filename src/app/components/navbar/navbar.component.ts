@@ -63,7 +63,7 @@ export class NavbarComponent implements OnInit {
   newChatButtonHandler() {
     this.getUserInfo;
     if (window.location.pathname == '/layout') {
-      window.location.reload();
+      this.ngOnInit();
     } else {
       this.router.navigate(['/layout']);
     }
