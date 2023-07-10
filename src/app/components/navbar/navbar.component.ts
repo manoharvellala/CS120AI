@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Location } from '@angular/common';
@@ -23,8 +23,7 @@ export class NavbarComponent implements OnInit {
     private http: HttpClient,
     private router: Router,
     private location: Location,
-    public auth: AuthService,
-    private cdr: ChangeDetectorRef
+    public auth: AuthService
   ) {}
 
   ngOnInit() {
@@ -61,17 +60,27 @@ export class NavbarComponent implements OnInit {
       },
     });
   }
-  newChatButtonHandler() {
-    this.getUserInfo;
-    this.router.navigate(['/layout']);
+  async newChatButtonHandler() {
+    if (await this.getUserInfo()) {
+      if (window.location.pathname == '/layout') {
+        window.location.reload();
+      } else {
+        this.router.navigate(['/layout']);
+      }
+    }
   }
   getUserInfo() {
-    this.auth.user$.subscribe((user) => {
-      this.loggedInUser = user;
-      console.log(this.loggedInUser);
-      if (this.loggedInUser != null) {
-        this.fetchCategories(this.loggedInUser.name);
-      }
+    return new Promise((resolve) => {
+      this.auth.user$.subscribe((user) => {
+        this.loggedInUser = user;
+        console.log(this.loggedInUser);
+        if (this.loggedInUser != null) {
+          this.fetchCategories(this.loggedInUser.name);
+          resolve(true); // Resolves the promise when user info is available
+        } else {
+          resolve(false); // Resolves the promise when user info is not available
+        }
+      });
     });
   }
 
