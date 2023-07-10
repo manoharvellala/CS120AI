@@ -2,7 +2,7 @@
 
 <div id="app">
   <h1 *ngIf="loadSection">ChatGPT</h1>
-  <section *ngIf="loadSection">
+  <div *ngIf="loadSection" class="layoutBody">
     <div class="examples">
       <span class="sun-icon">&#9788;</span>
       <h2>Examples</h2>
@@ -31,7 +31,7 @@
       </p>
       <p>Limited knowledge of world and <br />events after 2021</p>
     </div>
-  </section>
+  </div>
 
   <div id="container" #container></div>
 

@@ -12,7 +12,7 @@ h2 {
   margin-left: 10%;
 }
 
-section {
+.layoutBody {
   display: flex;
   flex-direction: row;
   justify-content: center;
