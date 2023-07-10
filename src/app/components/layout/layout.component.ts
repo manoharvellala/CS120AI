@@ -133,7 +133,6 @@ export class LayoutComponent {
       await this.generateTitle(data.get('prompt')).then((title) => {
         this.navBarTitle = title;
       });
-      this.titleExist = true;
     }
 
     const data = new FormData(this.form ?? undefined);
@@ -168,10 +167,12 @@ export class LayoutComponent {
         }),
       }
     );
-
-    this.reloadNavbar = false;
-    this.cdr.detectChanges();
-    this.reloadNavbar = true;
+    if (this.titleExist == false) {
+      this.reloadNavbar = false;
+      this.cdr.detectChanges();
+      this.reloadNavbar = true;
+      this.titleExist = true;
+    }
 
     clearInterval(this.loadinterval);
     if (messageDiv != null) {
