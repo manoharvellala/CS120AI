@@ -17,7 +17,7 @@ interface Category {
 export class NavbarComponent implements OnInit {
   categories: Category[] = [];
   loggedInUser: any;
-  loginButtonDisplay: boolean = false;
+  hideNavbar: boolean = false;
 
   constructor(
     private http: HttpClient,
@@ -78,6 +78,11 @@ export class NavbarComponent implements OnInit {
     // Add your logout logic here
     // Example: Call the logout method from AuthService if available
     this.auth.logout();
-    this.loginButtonDisplay = false;
+  }
+  clearConversation() {
+    console.log('hello');
+  }
+  hideNavbarHandler() {
+    this.hideNavbar = !this.hideNavbar;
   }
 }

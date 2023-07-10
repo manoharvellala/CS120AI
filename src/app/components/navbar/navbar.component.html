@@ -1,18 +1,20 @@
 <div class="NavBarDiv">
-  <nav class="NavBar">
+  <nav class="NavBar" *ngIf="!hideNavbar">
     <div>
-      <button
-        class="newChatButton"
-        (click)="newChatButtonHandler()"
-        *ngIf="loggedInUser"
-      >
-        <div style="font-size: 20px">+</div>
-        New Chat
-      </button>
+      <div class="sidebaricons">
+        <button
+          class="newChatButton"
+          (click)="newChatButtonHandler()"
+          *ngIf="loggedInUser"
+        >
+          <div style="font-size: 20px">+</div>
+          New Chat
+        </button>
+        <button class="sidebarButton" (click)="hideNavbarHandler()">
+          <img src="../assets/sidebar.png" alt="" class="sidebar" />
+        </button>
+      </div>
       <div class="navBarBody">
-        <ul style="color: hsla(0, 0%, 100%, 0.724); margin: 10px">
-          Today
-        </ul>
         <ul *ngIf="loggedInUser">
           <li
             class="list-items"
@@ -56,9 +58,21 @@
           </button>
           <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="logout()">Logout</button>
+            <button mat-menu-item (click)="(clearConversation)">
+              Clear conversation
+              <img class="trashcan" src="../assets/trash-can.png" />
+            </button>
           </mat-menu>
         </ul>
       </li>
     </ul>
   </nav>
+  <button
+    class="sidebarButton"
+    (click)="hideNavbarHandler()"
+    *ngIf="hideNavbar"
+    style="margin-top: 20px; border: 2px solid white; margin-left: 10px"
+  >
+    <img src="../assets/sidebar.png" alt="" class="sidebar" />
+  </button>
 </div>

@@ -24,6 +24,7 @@ export class LayoutComponent {
   titleExist: any = false;
   reloadNavbar: boolean = true;
   loadSection: boolean = true;
+  hideNavbar: boolean = false;
 
   constructor(
     private elementref: ElementRef,
@@ -116,6 +117,9 @@ export class LayoutComponent {
     this.auth.user$.subscribe((user) => {
       this.loggedInUser = user;
     });
+  }
+  hideNavbarHandler() {
+    this.hideNavbar = false;
   }
 
   handlesubmit = async (e: any) => {

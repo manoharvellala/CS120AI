@@ -46,7 +46,7 @@
   color: white;
   border: 1px solid hsla(0, 0%, 100%, 0.2);
 
-  width: 175px;
+  width: 165px;
   height: 40px;
   text-align: left;
   border-radius: 5px;
@@ -105,4 +105,22 @@
   display: flex;
   gap: 10px;
   align-items: center;
+}
+.trashcan {
+  width: 12px;
+  height: 12px;
+}
+.sidebar {
+  width: 35px;
+  height: 35px;
+}
+.sidebaricons {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+.sidebarButton {
+  border: 1px solid hsla(0, 0%, 100%, 0.2);
+  height: 40px;
+  border-radius: 5px;
 }
