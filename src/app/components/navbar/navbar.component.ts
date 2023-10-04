@@ -56,7 +56,7 @@ export class NavbarComponent implements OnInit {
     this.router.navigate([routePath], {
       queryParams: {
         categoryName: categoryName,
-        username: this.loggedInUser.name,
+        username: 'manohar',
       },
     });
   }

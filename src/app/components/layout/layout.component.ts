@@ -162,7 +162,7 @@ export class LayoutComponent {
         },
         body: JSON.stringify({
           question: data.get('prompt'),
-          username: `${this.loggedInUser.name}`, // get the username here
+          username: `manohar`, // get the username here
           title: `${this.navBarTitle}`,
         }),
       }
