@@ -11,8 +11,6 @@ export class AuthenticationComponent {
   constructor(private router: Router, public auth: AuthService) {}
 
   login(): void {
-    this.auth.loginWithPopup().subscribe(() => {
-      this.router.navigate(['/layout']);
-    });
+    this.router.navigate(['/layout']);
   }
 }

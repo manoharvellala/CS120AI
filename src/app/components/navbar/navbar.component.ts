@@ -74,7 +74,7 @@ export class NavbarComponent implements OnInit {
   getUserInfo() {
     return new Promise((resolve) => {
       this.auth.user$.subscribe((user) => {
-        this.loggedInUser = user;
+        this.loggedInUser = 'manohar';
         console.log(this.loggedInUser);
         if (this.loggedInUser != null) {
           this.fetchCategories(this.loggedInUser.name);

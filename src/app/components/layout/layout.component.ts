@@ -115,7 +115,7 @@ export class LayoutComponent {
   }
   getUserInfo() {
     this.auth.user$.subscribe((user) => {
-      this.loggedInUser = user;
+      this.loggedInUser = 'manohar';
     });
   }
   hideNavbarHandler() {

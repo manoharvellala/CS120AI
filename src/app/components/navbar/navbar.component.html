@@ -33,39 +33,6 @@
         </ul>
       </div>
     </div>
-
-    <ul>
-      <span class="line" *ngIf="loggedInUser"></span>
-
-      <li *ngIf="loggedInUser">
-        <ul class="userDetails">
-          <img
-            class="profile-pic"
-            src="{{ loggedInUser.picture }}"
-            alt="Profile Picture"
-          />
-
-          <span class="username" style="color: white">{{
-            loggedInUser.name
-          }}</span>
-          <button
-            mat-icon-button
-            [matMenuTriggerFor]="menu"
-            aria-label="User Menu"
-            class="dots"
-          >
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item (click)="logout()">Logout</button>
-            <button mat-menu-item (click)="clearConversation()">
-              Clear conversation
-              <img class="trashcan" src="../assets/trash-can.png" />
-            </button>
-          </mat-menu>
-        </ul>
-      </li>
-    </ul>
   </nav>
   <button
     class="layouthideNavbar"
