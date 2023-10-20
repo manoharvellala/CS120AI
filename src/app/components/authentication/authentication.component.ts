@@ -8,9 +8,10 @@ import { AuthService } from '@auth0/auth0-angular';
   styleUrls: ['./authentication.component.css'],
 })
 export class AuthenticationComponent {
-  constructor(private router: Router, public auth: AuthService) {}
+  constructor(private router: Router, public auth: AuthService) {
 
-  login(): void {
     this.router.navigate(['/layout']);
   }
+
+  
 }
