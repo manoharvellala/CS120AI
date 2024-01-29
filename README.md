@@ -1,4 +1,7 @@
 # ChatGTPClient
+Created a chatbot tailored for Old Dominion University courses. Prototype Link: https://chatbotbymanoharv.netlify.app/. This chatbot
+reduces the workload of teaching assistants and enhances student’s understanding of the curriculum. {Angular, Flask,
+TypeScript
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.6.
 
