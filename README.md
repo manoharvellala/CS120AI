@@ -1,6 +1,5 @@
-# ChatGTPClient
-Created an Angular, Django, and GraphQL based chatbot tailored for Old Dominion University courses. This chatbot alleviates the teaching assistants workload by answering course-related questions.
-Prototype Link: https://graphvisualizationbymanohar.netlify.app/
-
+Innovated CS120.AI an Angular, Django based chatbot designed for courses at Old Dominion University.
+Harnessed the power of the Transformers library from Hugging Face to fine-tune the Llama 2 and used the RAG-based
+method to query course data stored in the Pinacone Vector Database.
 
 
