@@ -53,7 +53,7 @@ body {
 }
 
 .ai {
-  background: light blue;
+  background: #add8e6;
 }
 
 .chat {
@@ -74,7 +74,7 @@ body {
   height: 36px;
   border-radius: 5px;
 
-  background: light blue;
+  background:#add8e6;
 
   display: flex;
   justify-content: center;
@@ -82,7 +82,7 @@ body {
 }
 
 .ai .profile {
-  background: light blue;
+  background:#add8e6;
 }
 
 .profile img {
